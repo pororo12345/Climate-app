@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climate Awareness App</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+  <div id="login-signup">
+    <!-- Login and sign-up form -->
+    <h2>Sign Up / Log In</h2>
+    <!-- Your login and sign-up form HTML goes here -->
+    <!-- Replace the form elements with your actual login and sign-up form -->
+    <form id="loginForm">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Log In</button>
+    </form>
+    <button onclick="redirectTo('signup.html')">Sign Up</button>
+  </div>
+
+  <div id="main" style="display: none;">
+    <!-- Main page with four boxes -->
+    <header>
+      <h1>Welcome to the Climate Awareness App</h1>
+    </header>
+    <main>
+      <div class="container">
+        <!-- Your four boxes HTML goes here -->
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 Climate Awareness App</p>
+    </footer>
+  </div>
+
+  <script>
+    // Function to handle login form submission
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Perform login authentication here
+      // For demonstration purposes, let's assume the login is successful
+      // Here you would typically perform AJAX request to your backend to authenticate the user
+      // If authentication is successful, show the main page
+      showMainPage();
+    });
+
+    // Function to show the main page after successful login
+    function showMainPage() {
+      document.getElementById('login-signup').style.display = 'none';
+      document.getElementById('main').style.display = 'block';
+    }
+
+    // Function to redirect to a specific page
+    function redirectTo(url) {
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
